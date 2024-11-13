@@ -23,7 +23,13 @@ Se o Docker estiver instalado corretamente, você verá a versão instalada.
 f. Adicionar seu usuário ao grupo docker (opcional, para rodar Docker sem sudo):
 
 sudo usermod -aG docker $USER
-Após executar este comando, você precisará sair e entrar novamente para que as mudanças tenham efeito.
+
+g. Após executar este comando, você precisará sair e entrar novamente para que as mudanças tenham efeito.
+exit
+
+h. Verifique se o usuário foi adicionado ao grupo docker, pra não ter que ficar utilizando o sudo
+ groups $USER
+
 
 2. Verificar se o Docker está funcionando
 Agora, você pode verificar se o Docker está em execução usando:
