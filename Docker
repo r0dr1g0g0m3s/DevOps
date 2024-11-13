@@ -1,34 +1,37 @@
 1. Instalar o Docker no Ubuntu
-a. Atualizar o repositório e instalar dependências:
 
+a. Atualizar o repositório e instalar dependências:
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
 b. Adicionar a chave GPG oficial do Docker:
-bash
-Copiar código
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
 c. Adicionar o repositório do Docker:
-
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-d. Instalar o Docker:
 
+d. Instalar o Docker:
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io
-e. Verificar a instalação do Docker:
+
+e. Iniciando e habilitando o comando docker
+sudo systemctl start 
+docker sudo systemctl enable docker
+
+f. Verificar a instalação do Docker:
 Para verificar se o Docker foi instalado corretamente, execute:
-
 docker --version
-Se o Docker estiver instalado corretamente, você verá a versão instalada.
 
-f. Adicionar seu usuário ao grupo docker (opcional, para rodar Docker sem sudo):
-
+g. Adicionar seu usuário ao grupo docker (opcional, para rodar Docker sem sudo):
 sudo usermod -aG docker $USER
 
-g. Após executar este comando, você precisará sair e entrar novamente para que as mudanças tenham efeito.
+h. Após executar este comando, você precisará sair e entrar novamente para que as mudanças tenham efeito.
 exit
 
-h. Verifique se o usuário foi adicionado ao grupo docker, pra não ter que ficar utilizando o sudo
+i. Verifique se o usuário foi adicionado ao grupo docker, pra não ter que ficar utilizando o sudo
  groups $USER
+
+
 
 
 2. Verificar se o Docker está funcionando
