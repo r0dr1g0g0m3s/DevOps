@@ -27,8 +27,20 @@ ou
 #utilizando outra(s) ferramenta(s)
 minikube start 
 
+f. Verique o status
+minikube status
+
+g. Instancie o dashboard
+minikube dashboard
+
 h. Configure o kubectl (se ainda não estiver configurado):
 bash
 minikube config set driver virtualbox
 eval $(minikube 
+
+i. Para para e deletar
+minikube stop
+minikube delete
+
+
 
