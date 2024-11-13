@@ -7,9 +7,6 @@ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/
 sudo apt update
 sudo snap install kubectl --classic
 
-Usando snap (se disponível no seu sistema):
-sudo snap install kubectl --classic
-
 Usando curl (se preferir baixar diretamente):
 curl -LO "https://dl.k8s.io/release/v1.28.0/bin/linux/amd64/kubectl"
 chmod +x kubectl
