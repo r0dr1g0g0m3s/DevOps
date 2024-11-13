@@ -32,6 +32,7 @@ minikube status
 
 g. Instancie o dashboard
 minikube dashboard
+http://127.0.0.1:36567/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/pod?namespace=default
 
 h. Configure o kubectl (se ainda não estiver configurado):
 bash
