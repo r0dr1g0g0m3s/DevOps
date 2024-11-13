@@ -21,5 +21,9 @@ Asegúrate de que Minikube esté instalado correctamente ejecutando:
 minikube version
 
 g. Inicie o minikube
+#utilizando o docker
 minikube start --driver=docker
+
+#utilizando outra(s) ferramenta(s)
+minikube start 
 
