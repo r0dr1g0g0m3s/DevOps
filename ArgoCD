@@ -32,6 +32,57 @@ Initial password is kept as a secret in the argocd namespace; therefore, we will
 
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 4. Copy the password, go back to your browser and enter it as password (username is admin). You should be in the GUI interface.
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+Instalando linha de comandos no bash do Ubuntu 64bits
+https://argo-cd.readthedocs.io/en/stable/
+
+Acesse a interface gráfica
+https://openshift-gitops-server-openshift-gitops.apps.ocp.tjms.jus.br
+
+No menu a esquerda, clique em Documentation
+
+No menu central, clique em Linux (AMD64) para efetuar o download do argocd-linux-amd64
+
+Agora, copie o arquivo baixado (argocd-linux-amd64) para dentro de /home/user-name e siga os passos abaixo
+
+cd /usr/local/bin/
+sudo mv /home/rodrigo/argocd-linux-amd64 /usr/local/bin/argocd
+ sudo chmod +x /usr/local/bin/argocd
+
+usuario:/usr/local/bin# ls
+argocd    
+
+usuario@STI-DSA-176113:/usr/local/bin# argocd version
+argocd: v2.12.6+4dab5bd
+  BuildDate: 2024-10-22T15:24:17Z
+  GitCommit: 4dab5bd6a60adea12e084ad23519e35b710060a2
+  GitTreeState: clean
+  GoVersion: go1.22.7 (Red Hat 1.22.7-1.module+el8.10.0+22325+dc584f75)
+  Compiler: gc
+  Platform: linux/amd64
+  ExtraBuildInfo: {Vendor Information: Red Hat OpenShift GitOps version: v1.14.1}
+FATA[0000] Argo CD server address unspecified
+
+
+É preciso específicar o endereço do servidor ArgoCD (Argo CD server address unspecified)
+Existem três maneiras:
+1º Logando via bash
+argocd login argocd login openshift-gitops-server-openshift-gitops.apps.ocp.tjms.jus.br --insecure --grpc-web
+argocd login openshift-gitops-server-openshift-gitops.apps.ocp.tjms.jus.br --insecure --grpc-web --auth-token sha256~iUBpv6vRH2eOEzkz5JHf-H0IPtfriqcWEif5KvThOD8
+
+2º Logando via bash com token
+oc whoami --show-token]
+argocd login openshift-gitops-server-openshift-gitops.apps.ocp.tjms.jus.br --insecure --grpc-web --auth-token sha256~iUBpv6vRH2eOEzkz5JHf-H0IPtfriqcWEif5KvThOD8
+
+3º Usar a flag --server
+oc whoami --show-token]
+argocd --server openshift-gitops-server-openshift-gitops.apps.ocp.tjms.jus.br 
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
 
 
 Deploying a test app
