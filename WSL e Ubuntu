@@ -1,1 +1,16 @@
 
+
+
+Atualize o kernel do WSL 2
+Abra o Prompt de Comando como administrador
+wsl --update
+
+Habilitar a Plataforma de Máquina Virtual
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+Se necessário, reinstale o WSL
+wsl --install
+
+
+wsl --list
+
