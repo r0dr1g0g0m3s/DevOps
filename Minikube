@@ -1,0 +1,22 @@
+1. Instalar Minikube en Linux:
+a. Instalar dependencias:
+Minikube requiere algunas dependencias como curl, virtualbox, docker o kvm. Asegúrate de tenerlas instaladas. Para instalar curl y apt-transport-https, puedes usar los siguientes comandos:
+
+sudo apt-get update
+sudo apt-get install -y curl apt-transport-https
+b. Descargar Minikube:
+Usa curl para descargar el binario de Minikube desde el sitio oficial.
+
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.29.0/minikube-linux-amd64
+c. Hacer el binario ejecutable:
+Cambia los permisos del archivo descargado para que sea ejecutable.
+
+chmod +x minikube
+d. Mover el binario a un directorio en tu PATH:
+Esto facilitará la ejecución de Minikube desde cualquier terminal.
+
+sudo mv minikube /usr/local/bin/
+e. Verificar la instalación:
+Asegúrate de que Minikube esté instalado correctamente ejecutando:
+
+minikube version
