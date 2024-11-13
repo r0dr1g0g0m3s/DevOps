@@ -23,7 +23,12 @@ minikube version
 g. Inicie o minikube
 #utilizando o docker
 minikube start --driver=docker
-
+ou
 #utilizando outra(s) ferramenta(s)
 minikube start 
+
+h. Configure o kubectl (se ainda não estiver configurado):
+bash
+minikube config set driver virtualbox
+eval $(minikube 
 
