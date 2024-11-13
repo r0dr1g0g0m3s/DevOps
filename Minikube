@@ -10,13 +10,16 @@ Usa curl para descargar el binario de Minikube desde el sitio oficial.
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.29.0/minikube-linux-amd64
 c. Hacer el binario ejecutable:
 Cambia los permisos del archivo descargado para que sea ejecutable.
-
 chmod +x minikube
+
 d. Mover el binario a un directorio en tu PATH:
 Esto facilitará la ejecución de Minikube desde cualquier terminal.
-
 sudo mv minikube /usr/local/bin/
+
 e. Verificar la instalación:
 Asegúrate de que Minikube esté instalado correctamente ejecutando:
-
 minikube version
+
+g. Inicie o minikube
+minikube start --driver=docker
+
